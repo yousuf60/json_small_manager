@@ -2,12 +2,11 @@ import json
 import os.path
 
 path = os.path.abspath(os.path.dirname(__file__))
-#do not forget to make /data dir or edit the code as you need
 data_path = os.path.join(path, "data")
 
 
 class DataManager:
-    file_name = ""
+    
     def __init__(self, file_name):
         self.file_name = self.path_join(file_name)
 
@@ -30,7 +29,7 @@ class DataManager:
     def path_join(self, name):
         return os.path.join(data_path, name)
 
-    def file_exists(self, name=file_name):
+    def file_exists(self, name):
         return os.path.exists(self.path_join(name))
     
     def change_file(self, file_name):
@@ -44,7 +43,7 @@ if __name__ == "__main__":
     print(dataManager.read_file())
     print(dataManager.file_exists("test.json"))
     print(dataManager.file_exists("teggst.json"))
-    print(dataManager.file_exists())
+    print(dataManager.file_exists("")) #dir
     dataManager.remove_file()
     
 
