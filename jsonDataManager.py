@@ -2,6 +2,7 @@ import json
 import os.path
 
 path = os.path.abspath(os.path.dirname(__file__))
+# do not forget to make /data dir or edit the code as you need
 data_path = os.path.join(path, "data")
 
 
